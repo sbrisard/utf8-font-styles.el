@@ -87,7 +87,8 @@
 (setq font-styles--normal (mapcar (lambda (s) (aref s 0)) font-styles--all-styles))
 
 (load-file "utf8-font-styles-normal-to-bold.el")
-;(setq font-styles--normal-to-bold (font-styles--all-styles-extract-column 1))
+(load-file "utf8-font-styles-normal-to-italic.el")
+;;(setq font-styles--normal-to-bold (font-styles--all-styles-extract-column 1))
 ;; (setq font-styles--normal-to-italic (font-styles--all-styles-extract-column 2))
 ;; (setq font-styles--normal-to-bold-italic (font-styles--all-styles-extract-column 3))
 ;; (setq font-styles--normal-to-script (font-styles--all-styles-extract-column 4))
@@ -130,10 +131,11 @@
 	  ;font-styles--bold-italic-to-italic)
   ))
 
-;; (define-translation-table 'font-styles-to-italic
-;;   (append font-styles--normal-to-italic
-;; 	  font-styles--bold-to-bold-italic
-;; 	  font-styles--bold-italic-to-bold))
+(define-translation-table 'utf8-font-styles-to-italic
+  (append utf8-font-styles--normal-to-italic
+	  ;font-styles--bold-to-bold-italic
+	  ;font-styles--bold-italic-to-bold
+	  ))
 
 ;; (define-translation-table 'font-styles-to-bold-italic
 ;;   (append font-styles--normal-to-bold-italic
