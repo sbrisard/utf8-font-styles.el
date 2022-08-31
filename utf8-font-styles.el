@@ -88,11 +88,7 @@
 
 (load-file "utf8-font-styles-normal-to-bold.el")
 (load-file "utf8-font-styles-normal-to-italic.el")
-;;(setq font-styles--normal-to-bold (font-styles--all-styles-extract-column 1))
-;; (setq font-styles--normal-to-italic (font-styles--all-styles-extract-column 2))
-;; (setq font-styles--normal-to-bold-italic (font-styles--all-styles-extract-column 3))
-;; (setq font-styles--normal-to-script (font-styles--all-styles-extract-column 4))
-;; (setq font-styles--normal-to-bold-script (font-styles--all-styles-extract-column 5))
+(load-file "utf8-font-styles-normal-to-bold-italic.el")
 
 ;; (setq font-styles--bold-to-normal
 ;;       (font-styles--invert-table utf8-font-styles--normal-to-bold))
@@ -137,10 +133,11 @@
 	  ;font-styles--bold-italic-to-bold
 	  ))
 
-;; (define-translation-table 'font-styles-to-bold-italic
-;;   (append font-styles--normal-to-bold-italic
-;; 	  font-styles--bold-to-bold-italic
-;; 	  font-styles--italic-to-bold-italic))
+(define-translation-table 'font-styles-to-bold-italic
+  (append font-styles--normal-to-bold-italic
+	  ;; font-styles--bold-to-bold-italic
+	  ;; font-styles--italic-to-bold-italic
+	  ))
 
 ;; (define-translation-table 'font-styles-to-script font-styles--normal-to-script)
 
