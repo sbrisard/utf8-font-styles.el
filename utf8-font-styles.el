@@ -86,58 +86,61 @@
 
 (setq font-styles--normal (mapcar (lambda (s) (aref s 0)) font-styles--all-styles))
 
-(setq font-styles--normal-to-bold (font-styles--all-styles-extract-column 1))
-(setq font-styles--normal-to-italic (font-styles--all-styles-extract-column 2))
-(setq font-styles--normal-to-bold-italic (font-styles--all-styles-extract-column 3))
-(setq font-styles--normal-to-script (font-styles--all-styles-extract-column 4))
+(load-file "utf8-font-styles-normal-to-bold.el")
+;(setq font-styles--normal-to-bold (font-styles--all-styles-extract-column 1))
+;; (setq font-styles--normal-to-italic (font-styles--all-styles-extract-column 2))
+;; (setq font-styles--normal-to-bold-italic (font-styles--all-styles-extract-column 3))
+;; (setq font-styles--normal-to-script (font-styles--all-styles-extract-column 4))
+;; (setq font-styles--normal-to-bold-script (font-styles--all-styles-extract-column 5))
 
-(setq font-styles--bold-to-normal
-      (font-styles--invert-table font-styles--normal-to-bold))
+;; (setq font-styles--bold-to-normal
+;;       (font-styles--invert-table utf8-font-styles--normal-to-bold))
 
-(setq font-styles--bold-to-bold-italic
-      (font-styles--merge-style-tables font-styles--normal-to-bold
-				       font-styles--normal-to-bold-italic))
+;; (setq font-styles--bold-to-bold-italic
+;;       (font-styles--merge-style-tables utf8-font-styles--normal-to-bold
+;; 				       font-styles--normal-to-bold-italic))
 
-(setq font-styles--italic-to-normal
-      (font-styles--invert-table font-styles--normal-to-italic))
+;; (setq font-styles--italic-to-normal
+;;       (font-styles--invert-table font-styles--normal-to-italic))
 
-(setq font-styles--italic-to-bold-italic
-      (font-styles--merge-style-tables font-styles--normal-to-italic
-				       font-styles--normal-to-bold-italic))
+;; (setq font-styles--italic-to-bold-italic
+;;       (font-styles--merge-style-tables font-styles--normal-to-italic
+;; 				       font-styles--normal-to-bold-italic))
 
-(setq font-styles--bold-italic-to-normal
-      (font-styles--invert-table font-styles--normal-to-bold-italic))
+;; (setq font-styles--bold-italic-to-normal
+;;       (font-styles--invert-table font-styles--normal-to-bold-italic))
 
-(setq font-styles--bold-italic-to-bold
-      (font-styles--invert-table font-styles--bold-to-bold-italic))
+;; (setq font-styles--bold-italic-to-bold
+;;       (font-styles--invert-table font-styles--bold-to-bold-italic))
 
-(setq font-styles--bold-italic-to-italic
-      (font-styles--invert-table font-styles--italic-to-bold-italic))
+;; (setq font-styles--bold-italic-to-italic
+;;       (font-styles--invert-table font-styles--italic-to-bold-italic))
 
-(setq font-styles--script-to-normal
-      (font-styles--invert-table font-styles--normal-to-script))
+;; (setq font-styles--script-to-normal
+;;       (font-styles--invert-table font-styles--normal-to-script))
 
-(define-translation-table 'font-styles-to-normal
-  (append font-styles--bold-to-normal
-	  font-styles--italic-to-normal
-	  font-styles--bold-italic-to-normal))
+;; (define-translation-table 'font-styles-to-normal
+;;   (append font-styles--bold-to-normal
+;; 	  font-styles--italic-to-normal
+;; 	  font-styles--bold-italic-to-normal))
 
-(define-translation-table 'font-styles-to-bold
-  (append font-styles--normal-to-bold
-	  font-styles--italic-to-bold-italic
-	  font-styles--bold-italic-to-italic))
+(define-translation-table 'utf8-font-styles-to-bold
+  (append utf8-font-styles--normal-to-bold
+	  ;font-styles--italic-to-bold-italic
+	  ;font-styles--bold-italic-to-italic)
+  ))
 
-(define-translation-table 'font-styles-to-italic
-  (append font-styles--normal-to-italic
-	  font-styles--bold-to-bold-italic
-	  font-styles--bold-italic-to-bold))
+;; (define-translation-table 'font-styles-to-italic
+;;   (append font-styles--normal-to-italic
+;; 	  font-styles--bold-to-bold-italic
+;; 	  font-styles--bold-italic-to-bold))
 
-(define-translation-table 'font-styles-to-bold-italic
-  (append font-styles--normal-to-bold-italic
-	  font-styles--bold-to-bold-italic
-	  font-styles--italic-to-bold-italic))
+;; (define-translation-table 'font-styles-to-bold-italic
+;;   (append font-styles--normal-to-bold-italic
+;; 	  font-styles--bold-to-bold-italic
+;; 	  font-styles--italic-to-bold-italic))
 
-(define-translation-table 'font-styles-to-script font-styles--normal-to-script)
+;; (define-translation-table 'font-styles-to-script font-styles--normal-to-script)
 
 
 ;; (defun sb-replace-preceding-char (replacements)
