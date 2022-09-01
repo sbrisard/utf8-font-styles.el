@@ -98,6 +98,7 @@
 (load-file "utf8-font-styles-normal-to-bold-sans-serif.el")
 (load-file "utf8-font-styles-normal-to-italic-sans-serif.el")
 (load-file "utf8-font-styles-normal-to-bold-italic-sans-serif.el")
+(load-file "utf8-font-styles-normal-to-monospace.el")
 
 ;; (setq font-styles--bold-to-normal
 ;;       (font-styles--invert-table utf8-font-styles--normal-to-bold))
@@ -174,6 +175,10 @@
 
 (define-translation-table 'utf8-font-styles-to-bold-italic-sans-serif
   utf8-font-styles--normal-to-bold-italic-sans-serif)
+
+(define-translation-table 'utf8-font-styles-to-monospace
+  utf8-font-styles--normal-to-monospace)
+
 
 ;; (defun sb-replace-preceding-char (replacements)
 ;;   (interactive)
