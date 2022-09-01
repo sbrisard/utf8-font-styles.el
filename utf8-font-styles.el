@@ -92,6 +92,10 @@
 (load-file "utf8-font-styles-normal-to-script.el")
 (load-file "utf8-font-styles-normal-to-bold-script.el")
 (load-file "utf8-font-styles-normal-to-fraktur.el")
+(load-file "utf8-font-styles-normal-to-bold-fraktur.el")
+(load-file "utf8-font-styles-normal-to-double-struck.el")
+(load-file "utf8-font-styles-normal-to-sans-serif.el")
+(load-file "utf8-font-styles-normal-to-bold-sans-serif.el")
 
 ;; (setq font-styles--bold-to-normal
 ;;       (font-styles--invert-table utf8-font-styles--normal-to-bold))
@@ -151,6 +155,17 @@
 (define-translation-table 'utf8-font-styles-to-fraktur
   utf8-font-styles--normal-to-fraktur)
 
+(define-translation-table 'utf8-font-styles-to-bold-fraktur
+  utf8-font-styles--normal-to-bold-fraktur)
+
+(define-translation-table 'utf8-font-styles-to-double-struck
+  utf8-font-styles--normal-to-double-struck)
+
+(define-translation-table 'utf8-font-styles-to-sans-serif
+  utf8-font-styles--normal-to-sans-serif)
+
+(define-translation-table 'utf8-font-styles-to-bold-sans-serif
+  utf8-font-styles--normal-to-bold-sans-serif)
 
 ;; (defun sb-replace-preceding-char (replacements)
 ;;   (interactive)
