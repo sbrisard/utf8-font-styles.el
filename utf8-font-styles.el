@@ -91,6 +91,7 @@
 (load-file "utf8-font-styles-normal-to-bold-italic.el")
 (load-file "utf8-font-styles-normal-to-script.el")
 (load-file "utf8-font-styles-normal-to-bold-script.el")
+(load-file "utf8-font-styles-normal-to-fraktur.el")
 
 ;; (setq font-styles--bold-to-normal
 ;;       (font-styles--invert-table utf8-font-styles--normal-to-bold))
@@ -146,6 +147,10 @@
 
 (define-translation-table 'utf8-font-styles-to-bold-script
   utf8-font-styles--normal-to-bold-script)
+
+(define-translation-table 'utf8-font-styles-to-fraktur
+  utf8-font-styles--normal-to-fraktur)
+
 
 ;; (defun sb-replace-preceding-char (replacements)
 ;;   (interactive)
